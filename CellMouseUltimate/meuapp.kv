@@ -1,0 +1,126 @@
+<MeuGerenciador>:
+    HomeScreen:
+    AncoragemUSB:
+    AncoragemWIFI:
+    AncoragemBLUETOOTH:
+    AncoragemCELULAR:
+
+<HomeScreen>:
+    name: "home"
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "Ancoragem USB"
+            on_press: root.manager.current = "AncoragemUSB"
+
+        Button:
+            text: "Ancoragem Wifi"
+            on_press: root.manager.current = "AncoragemWIFI"
+
+
+        Button:
+            text: "Ancoragem Bluetooth"
+            on_press: root.manager.current = "AncoragemBLUETOOTH"
+
+
+        Button:
+            text: "Celular como Ancoragem"
+            on_press: root.manager.current = "AncoragemCELULAR"
+
+
+<AncoragemUSB>:
+    name: "AncoragemUSB"
+    BoxLayout:
+        orientation: "vertical"
+
+        # Área de movimento (touchpad)
+        Widget:
+            size_hint_y: 0.8
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 0.9, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        # Área dos botões
+        BoxLayout:
+            size_hint_y: 0.9
+            orientation: "horizontal"
+
+            Button:
+                text: "Botão Esquerdo"
+            Button:
+                text: "Botão Direito"
+
+        Button:
+            text: "Voltar para home"
+            on_press: root.manager.current = "home"
+            orientation: "vertical"
+            size_hint_y: 0.2
+
+
+<AncoragemWIFI>:
+    name: "AncoragemWIFI"
+    BoxLayout:
+        orientation: "vertical"
+
+        Widget:
+            size_hint_y: 0.8
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 0.9, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        BoxLayout:
+            size_hint_y: 0.9
+            orientation: "horizontal"
+
+            Button:
+                text: "Botão Esquerdo"
+            Button:
+                text: "Botão Direito"
+
+        Button:
+            text: "Voltar para home"
+            on_press: root.manager.current = "home"
+            orientation: "vertical"
+            size_hint_y: 0.2
+
+
+<AncoragemBLUETOOTH>:
+    name: "AncoragemBLUETOOTH"
+    BoxLayout:
+        orientation: "vertical"
+
+        Widget:
+            size_hint_y: 0.8
+            canvas.before:
+                Color:
+                    rgba: 0.9, 0.9, 0.9, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        BoxLayout:
+            size_hint_y: 0.9
+            orientation: "horizontal"
+
+            Button:
+                text: "Botão Esquerdo"
+            Button:
+                text: "Botão Direito"
+
+        Button:
+            text: "Voltar para home"
+            on_press: root.manager.current = "home"
+            orientation: "vertical"
+            size_hint_y: 0.2
+
+<AncoragemCELULAR>:
+    name: "AncoragemCELULAR"
+    BoxLayout:
+        orientation: "vertical"
+
