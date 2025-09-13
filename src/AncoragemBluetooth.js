@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, PanResponder, Switch } from "react-native";
+import { View, Text, TouchableOpacity, Switch, PanResponder } from "react-native";
 import TelasAncoragem from './estilos/TelasDeAncoragem'
+
+
 
 const AncoragemBluetooth = () => {
     const [ativo, setAtivo] = useState(false);

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, PanResponder, Switch } from "react-native";
+import React, { useState } from "react"
+import { View, Text, TouchableOpacity, PanResponder, Switch } from "react-native"
 import TelasAncoragem from './estilos/TelasDeAncoragem'
+import { Accelerometer, Gyroscope } from "expo-sensors"
+import io from "socket.io-client"
 
 const AncoragemCelular = () => {
     const [ativo, setAtivo] = useState(false);

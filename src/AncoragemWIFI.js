@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, PanResponder, Switch } from "react-native";
 import TelasAncoragem from './estilos/TelasDeAncoragem'
+import io from "socket.io-client"
 
 const AncoragemWIFI = () => {
     const [ativo, setAtivo] = useState(false);
