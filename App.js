@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+import { registerRootComponent } from 'expo'
+
+// importacao das telas
+import TelaPrincipal from './src/TelaPrincipal'
+import AncoragemWIFI from './src/AncoragemWIFI'
+import AncoragemBluetooth from './src/AncoragemBluetooth'
+import AncoragemUSB from './src/AncoragemUSB'
+import AncoragemCelular from './src/AncoragemCelular'
+
+
+const { Navigator, Screen } = createNativeStackNavigator()
+
+
+const App = () => {
+	return (
+		<NavigationContainer>
+			<Navigator screenOptions={{ headerShown: false }} initialRouteName='TelaPrincipal'>
+				<Screen name='TelaPrincipal' component={TelaPrincipal}/>
+        <Screen name='AncoragemWIFI' component={AncoragemWIFI}/>
+        <Screen name='AncoragemBluetooth' component={AncoragemBluetooth}/>
+				<Screen name='AncoragemUSB' component={AncoragemUSB}/>
+        <Screen name='AncoragemCelular' component={AncoragemCelular}/>
+			</Navigator>
+		</NavigationContainer>
+	)
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// registra o router
+registerRootComponent(App)
+
+export default App
