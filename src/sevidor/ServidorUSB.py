@@ -1,5 +1,6 @@
 import socketio
 import pyautogui
+import uvicorn
 from fastapi import FastAPI
 
 # Cria servidor Socket.IO (asyncio compatível com v4)
@@ -34,5 +35,4 @@ async def mouse_stop(sid):
 
 # Rodar servidor
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=5000)
